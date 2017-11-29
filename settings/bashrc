@@ -1,0 +1,12 @@
+# Ignore case when tabbing in terminal
+bind 'set completion-ignore-case on'
+
+export EDITOR="gvim --nofork"
+
+# Set vi mode in terminal
+set -o vi
+
+# Aliases
+alias ll='ls -alF'
+
+alias nwd='cd /home/palsimen/Development/Python/netatmo-weather-display'

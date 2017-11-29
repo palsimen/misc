@@ -1,0 +1,131 @@
+set langmenu=en
+
+filetype on
+filetype plugin on
+set nocompatible             
+
+set encoding=utf-8
+
+set notimeout             
+set nottimeout             
+
+set hidden
+
+set nu
+
+set nowrap
+
+set noswapfile
+
+set hlsearch          " highlight the text matching the search pattern
+set formatoptions=oqt
+set laststatus=2      " status line in all subwindows
+set backspace=2       " allow backspacing over everything in insert mode
+set cmdheight=1       " command line one high
+set ignorecase        " ignore case in search patterns unless key is mixed
+set smartcase         " autoindent
+set smartindent
+set tabstop=3
+set shiftwidth=3
+set expandtab
+
+syntax on
+
+set nofoldenable
+set foldmethod=manual "syntax = auto
+syn region myFold start="p_" end="end process" transparent fold
+syn sync fromstart
+
+" Make comments # start with indention and not at begin of line
+inoremap # X<BS>#
+
+"format the bottom statusline
+set statusline=%-20f%10y%=%p%%\ %m\ %r\ \(%l\,%c\)
+
+colorscheme desert
+
+" Put search result in center of window
+map N Nzz
+map n nzz
+map * *zz
+map gg ggzz
+
+" Command auto completion
+set wildmenu
+
+
+" Taglist settings
+filetype on
+let Tlist_Use_Right_Window = 1
+let Tlist_Auto_Update = 1
+let Tlist_Show_One_File = 1
+let Tlist_Sort_Type = "name"
+" CPP
+let tlist_cpp_settings = 'c++;f:function'
+map <F9> :TlistToggle<cr>
+
+" NERDTree
+let NERDTreeWinPos = "right"
+map <unique> <F12> :NERDTreeToggle<CR>
+
+" Tasklist
+let g:tlTokenList = ['TODO', '--%']
+
+" Open file at same line as last time
+autocmd BufReadPost *
+   \ if line("'\"") > 0 && line("'\"") <= line("$") |
+   \   exe "normal! g`\"" |
+   \ endif
+
+" Split screen width adjustment
+nnoremap <A-Left> :vertical resize -5<Cr>
+nnoremap <A-Right> :vertical resize +5<Cr>
+
+" Buffer navigation
+nmap <C-Left> :wincmd h<CR>
+nmap <C-Right> :wincmd l<CR>
+nmap <C-Up> :wincmd k<CR>
+nmap <C-Down> :wincmd j<CR>
+
+" CtrlP, see open buffers
+map <unique> <C-O> :CtrlPBuffer<CR>
+
+" Delete buffers from CtrlP
+let g:ctrlp_buffer_func = { 'enter': 'MyCtrlPMappings' }
+" Undefine use of Delete-key
+let g:ctrlp_prompt_mappings = { 'PrtDelete()': ['<Home>'] }
+" Make it possible to open same buffer in split view
+let g:ctrlp_jump_to_buffer = 0
+let g:ctrlp_working_path_mode = 0
+
+func! MyCtrlPMappings()
+    nnoremap <buffer> <silent> <del> :call <sid>DeleteBuffer()<cr>
+endfunc
+
+func! s:DeleteBuffer()
+    exec "bd" fnamemodify(getline('.')[2:], ':p')
+    exec "norm \<F5>"
+endfunc
+
+" Navigation (next and prev) in gvimdiff
+nmap <C-kPlus> ]c
+nmap <C-kMinus> [c
+
+" Navigation in tags
+set tags=\tags
+map <unique> <F3> <C-]> " Jump to tag under cursor
+map <unique> <S-F3> <C-T> " Jump back one step
+map <unique> <C-F3> :tnext<CR> " Jump to next tag
+
+" GUI settings
+if has("gui")
+
+  " T = toolbar
+  " m = menu
+  " r,b = scroll right and bottom
+  set go=Tmrbi
+  set guifont=Monospace\ 9
+  set lines=40 columns=130
+
+endif
+
