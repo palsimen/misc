@@ -45,5 +45,10 @@ fi
 # Find pid of process_name
 pid=$(~/misc/bin/find_pid $process_name)
 
-echo $pid
-
+if [ "$pid" != "0" ]; then
+   echo "$INFO Process $process_name is running"
+else
+   echo "$INFO Process $process_name is not running"
+   echo "$INFO Running action: $action"
+   $action
+fi
