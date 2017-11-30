@@ -21,7 +21,8 @@ process_name="$1"
 
 # Seach for the process name
 # Use pgrep to only search for process name, otherwise 'grep' cmd itself wil show up etc
-result=$(ps ax | pgrep $process_name | cut -d " " -f2)
+ps ax | pgrep -f $process_name
+result=$(ps ax | pgrep -f $process_name | cut -d " " -f2)
 
 
 if [ "$result" == "" ]; then
