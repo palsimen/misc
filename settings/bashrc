@@ -1,3 +1,5 @@
+export PATH=$PATH:~/misc/bin
+
 # Ignore case when tabbing in terminal
 bind 'set completion-ignore-case on'
 
