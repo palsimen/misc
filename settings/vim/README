@@ -1,0 +1,5 @@
+# Put the following in your ~/.vimrc file
+
+set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim74,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after,~/misc/settings/vim/
+
+source ~/misc/settings/vim/vimrc
