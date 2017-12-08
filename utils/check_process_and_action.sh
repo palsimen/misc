@@ -52,7 +52,7 @@ if [ "$pid" == "$this_pid" ]; then
 fi
 
 if [ "$pid" != "0" ]; then
-   echo "$INFO Process $process_name is running"
+   echo "$INFO Process $process_name is running with pid=$pid"
 else
    echo "$INFO Process $process_name is not running"
    echo "$INFO Running action: $action"

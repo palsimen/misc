@@ -25,6 +25,12 @@ process_name="$1"
 # -o: Shows the oldest process only, otherwise we get multiple matches when running this script through another
 result=$(pgrep -fo $process_name)
 
+# If pid returned is the pid of this process ($$), set it to 0
+this_pid="$$"
+if [ "$result" == "$this_pid" ]; then
+   result=""
+fi
+
 if [ "$result" == "" ]; then
    echo "0"
 else
