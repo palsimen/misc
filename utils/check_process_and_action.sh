@@ -43,7 +43,7 @@ if [ "x$action" == "x" ]; then
 fi
 
 # Find pid of process_name
-pid=$(find_pid $process_name)
+pid=$(~/misc/bin/find_pid $process_name)
 
 # If pid returned is the pid of this process ($$), set it to 0
 this_pid="$$"
