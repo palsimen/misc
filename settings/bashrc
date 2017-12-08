@@ -3,7 +3,13 @@ export PATH=$PATH:~/misc/bin
 # Ignore case when tabbing in terminal
 bind 'set completion-ignore-case on'
 
-export EDITOR="gvim --nofork"
+# Set the preferred editor
+# NB! Non GUI systems does not have gvim (e.g. raspberry pi), then set it to vim
+if [ "$(command -v gvim)" ]; then
+   export EDITOR="gvim --nofork"
+else
+   export EDITOR="vim"
+fi
 
 # Set vi mode in terminal
 set -o vi

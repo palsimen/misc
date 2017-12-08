@@ -23,7 +23,7 @@ process_name="$1"
 # Use pgrep, otherwise 'grep' cmd itself wil show up etc
 # -f: Searches whole process name, not only the process. e.g. python
 # -o: Shows the oldest process only, otherwise we get multiple matches when running this script through another
-result=$(ps ax | pgrep -fo $process_name)
+result=$(pgrep -fo $process_name)
 
 if [ "$result" == "" ]; then
    echo "0"
