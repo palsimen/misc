@@ -43,9 +43,15 @@ if [ "x$action" == "x" ]; then
 fi
 
 # Find pid of process_name
-pid=$(ps ax | grep -v grep | grep $process_name | cut -d " " -f2)
+pid=$(find_pid $process_name)
 
-if [ "$pid" != "" ]; then
+# If pid returned is the pid of this process ($$), set it to 0
+this_pid="$$"
+if [ "$pid" == "$this_pid" ]; then
+   pid="0"
+fi
+
+if [ "$pid" != "0" ]; then
    echo "$INFO Process $process_name is running"
 else
    echo "$INFO Process $process_name is not running"
