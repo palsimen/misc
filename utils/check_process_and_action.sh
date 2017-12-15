@@ -47,7 +47,15 @@ pid=$(~/misc/bin/find_pid $process_name)
 
 # If pid returned is the pid of this process ($$), set it to 0
 this_pid="$$"
+echo "$INFO this_pid=$this_pid"
 if [ "$pid" == "$this_pid" ]; then
+   pid="0"
+fi
+
+# Hack to remove process run by cron, if pid is this_pid-1, assume it's only the cron process and set to zero
+cron_pid=$(($this_pid-1))
+echo "$INFO cron_pid=$cron_pid"
+if [ "$pid" == "$cron_pid" ]; then
    pid="0"
 fi
 
