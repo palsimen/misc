@@ -1,0 +1,39 @@
+#!/bin/bash
+
+NAME="bash_script"
+INFO="INFO ($NAME):"
+ERROR="ERROR ($NAME):"
+
+function Help {
+   echo ""
+   echo "$NAME"
+   echo ""
+   echo " Options:"
+   echo "   -o <Option>       - an option"
+   echo "   -d                - prints debug info"
+   echo ""
+}
+
+option=""
+debug="false"
+while getopts ":o:d" opt; do
+   case $opt in
+      o)
+         option="$OPTARG"
+         ;;
+      d)
+         debug="true"
+         ;;
+      *)
+         Help
+         exit 1
+         ;;
+   esac
+done
+
+if [ "x$option" == "x" ]; then
+   echo "$ERROR An option must be provided"
+   exit 1
+fi
+
+echo "$INFO Done"
