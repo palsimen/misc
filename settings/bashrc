@@ -4,7 +4,7 @@ LOCAL_BASHRC="$LOCAL_SETTINGS_DIR/bashrc"
 export PATH=$PATH:~/misc/bin
 
 # Copy of ubuntu command prompt
-export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$"
+export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$ "
 
 # Ignore case when tabbing in terminal
 bind 'set completion-ignore-case on'
