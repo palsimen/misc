@@ -25,5 +25,6 @@ alias ll='ls -alF'
 
 # Local settings
 if [ -f "$LOCAL_BASHRC" ]; then
-   source $LOCAL_BASHRC
+   source "$LOCAL_BASHRC"
 fi
+
