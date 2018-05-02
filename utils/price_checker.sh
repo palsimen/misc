@@ -43,7 +43,6 @@ price=$(grep -oP "<span class=\"price\">\K([0-9]+)" /tmp/xxl.txt)
 
 message=""
 if [ "$price" != 899 ]; then
-   message="$INFO Price has changed, new price=$price"
+   SendMail "$INFO Price has changed, new price=$price"
 fi
 
-SendMail "$message"
