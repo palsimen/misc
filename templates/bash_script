@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NAME="bash_script"
+NAME="$(basename $BASH_SOURCE)"
 INFO="INFO ($NAME):"
 ERROR="ERROR ($NAME):"
 

@@ -61,4 +61,3 @@ else
    message="$INFO Price has not changed, it is still $price"
 fi
 
-SendMail "$message"
