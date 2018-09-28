@@ -16,5 +16,6 @@
 	dc = diff --cached
 	#lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
 	lg = log --graph 
-   out = log --pretty=oneline --abbrev-commit --graph @{u}..
-   in = !git fetch && git log --pretty=oneline --abbrev-commit --graph ..@{u}
+   lgv = log --name-only
+   out = log --name-only @{u}..
+   in = !git fetch && git log --name-only ..@{u}

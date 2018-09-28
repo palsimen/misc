@@ -1,7 +1,7 @@
 LOCAL_SETTINGS_DIR="/home/$USER/mysettings"
 LOCAL_BASHRC="$LOCAL_SETTINGS_DIR/bashrc"
 
-export PATH=$PATH:~/misc/bin
+export PATH=$PATH:~/misc/bin:~/bin
 
 # Copy of ubuntu command prompt
 export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$ "
