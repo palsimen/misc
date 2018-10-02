@@ -1,0 +1,1 @@
+find . -name "*.xml" | xargs sed -i 's/lol/lol2/'
