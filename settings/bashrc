@@ -17,9 +17,6 @@ else
    export EDITOR="vim"
 fi
 
-# Set vi mode in terminal
-set -o vi
-
 # Aliases
 alias ll='ls -alF'
 
