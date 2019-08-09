@@ -4,7 +4,7 @@ NAME="$(basename $BASH_SOURCE)"
 INFO="INFO ($NAME):"
 ERROR="ERROR ($NAME):"
 
-DIFF_DIR="../diffs"
+DIFF_DIR="$PWD/diffs"
 
 function Help {
    echo ""
@@ -51,15 +51,14 @@ if [ "x$to" == "x" ]; then
    exit 1
 fi
 
-diffDir=$repo/$DIFF_DIR
-
 filename="${repo}_patch_${from}_${to}.diff"
 diffString="version_${from}..version_${to}"
 
 cd $repo
-mkdir -p $diffDir
+mkdir -p $DIFF_DIR
 git fetch --all
-git diff --no-prefix $diffString > $diffDir/$filename
+git fetch --tags
+git diff --no-prefix $diffString > $DIFF_DIR/$filename
 cd - > /dev/null
 
 echo "$INFO Done"
