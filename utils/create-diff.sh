@@ -54,6 +54,9 @@ fi
 filename="${repo}_patch_${from}_${to}.diff"
 diffString="version_${from}..version_${to}"
 
+# Echo commands
+set -x
+
 cd $repo
 mkdir -p $DIFF_DIR
 git fetch --all
