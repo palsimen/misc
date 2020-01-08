@@ -1,0 +1,9 @@
+########################################
+# Merge without commiting (aka dry-run)
+########################################
+$ git merge --no-commit --no-ff $BRANCH
+$ git merge --abort
+
+
+Exclude test from diff
+git diff --no-prefix version_3.4.6..version_4.0.9 > ../diffs/real-time_patch_3.4.6_4.0.9.diff ':(exclude)real-time/test' ':(exclude)real-time-integration-test' ':(exclude)*/*/src/test/*' 

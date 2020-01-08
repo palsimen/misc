@@ -1,0 +1,2 @@
+mvn clean release:prepare -DautoVersionSubmodules=true -Dtest=\!HystrixHttpClientSenderTest
+mvn release:perform -DskipTests -DskipITs -Dskip.thread.tests 

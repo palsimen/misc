@@ -1,0 +1,35 @@
+find . -name "secure-environment.properties" | xargs sed -i 's/https.server.trust.password/https.server.trust.store.password/'
+
+find . -path "*/src/main/resources/kt4/no2-ktapp-2/environment.properties" | xargs grep -l "https.auth.enable" | xargs sed -i 's/https.auth.enable=true/https.auth.enable=false/'
+
+cd ~/prod/; find . -path "*/secure/secure-environment.properties" | xargs sed '/trust.store.password/d'; cd -
+
+for i in $(find . -path "*/src/main/resources/prod/papp-keystore.jks"); do echo cp -v ../keystores/certs/papp/papp-keystore.jks $i; done
+
+
+Jenkins script - fw-verification-summary
+# Disable echoing of commands
+set +x
+
+Finne hvilken process som bruker port
+lsof -i :<portnr>
+1. pwdx <pid>
+or
+2. cat /proc/<pid>/cmdline
+
+LOG_DIR=
+NUM_DAYS=1
+
+# Find log files modified last $NUM_DAYS
+logFiles=$(find $LOG_DIR -name "fw-verification.log.*" -mtime -$NUM_DAYS)
+
+for i in $logFiles
+do
+   echo "##########################################"
+   echo "# $(basename $i)"
+   echo "##########################################"
+   grep "Number of failed tests" $i
+   echo ""
+done
+
+
