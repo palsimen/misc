@@ -3,7 +3,10 @@ LOCAL_BASHRC="$LOCAL_SETTINGS_DIR/bashrc"
 
 export PATH=$PATH:~/misc/bin:~/bin
 
-export PAGER="most"
+# Enable most man viewer if installed
+if command -v most > /dev/null 2>&1; then
+   export PAGER="most"
+fi
 
 # Copy of ubuntu command prompt
 export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$ "
