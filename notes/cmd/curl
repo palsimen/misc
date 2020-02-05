@@ -1,6 +1,0 @@
-Curl into apaches to emulate customer requests. Get token from portal using chrome developer tools
-
-
-curl --noproxy "*" -v -XGET https://<url> \
--H "Accept: application/vnd.app-v1+json" \
--H "Authorization: Bearer eyJpc3MiOiJpbnRlcm5hbF9hdXRob3JpemF0aW9uX3NlcnZlciIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJwYXNlbCIsImF1dGgiOiJORVRTX09QRVJBVE9SX1VQREFURSIsImNvbnRleHQiOiJORVRTIiwidHlwZSI6ImFjY2Vzc190b2tlbiIsImV4cCI6MTU2MTYzNTIwOH0.o5i_7mcCFgjNiYRbiuNayx5fXnOgffiqcz1CWoMU2I098IgWI_zvcfgddmwkUMPsZd1LFOmhLaFnD8yrvEz3gVH3xiXkZWF-8MqnWJNStS-ZHIHt3ZClBSdN7odMCS3MRkOCbzhaaI2OWvIs1mfvhDc0mc7p2J17KTFLneVTSLyHx9Sd43DsWuWlTrg6TAqAN3H-LUphBt4xpnX734piUCRxhzVf_Kbq8QMHWmfJwNiaC4M1MfIwm8xUTSMABtbudJJR7vVamp_HQBe0gJeiQQ6tlQAU0i-b9DYdOFMz3L1IyGGJWMd5qTGMEe5TAMJjITwQnUetspy3CNy5-EiM7g"

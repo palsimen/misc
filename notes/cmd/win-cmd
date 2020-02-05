@@ -1,7 +1,0 @@
-Kill tasks in windows:
-
-taskkill /F /IM <name of process you identified in #2>
-
-taskkill /F /IM bash.exe
-taskkill /F /IM ssh.exe
-taskkill /F /IM tmux.exe
