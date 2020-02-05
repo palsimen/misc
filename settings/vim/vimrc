@@ -48,6 +48,8 @@ set statusline=%-20f%10y%=%p%%\ %m\ %r\ \(%l\,%c\)
 
 colorscheme desert
 
+set term=xterm-256color
+
 " Put search result in center of window
 map N Nzz
 map n nzz
@@ -59,21 +61,21 @@ set wildmenu
 
 
 " Taglist settings
-filetype on
-let Tlist_Use_Right_Window = 1
-let Tlist_Auto_Update = 1
-let Tlist_Show_One_File = 1
-let Tlist_Sort_Type = "name"
+"filetype on
+"let Tlist_Use_Right_Window = 1
+"let Tlist_Auto_Update = 1
+"let Tlist_Show_One_File = 1
+"let Tlist_Sort_Type = "name"
 " CPP
-let tlist_cpp_settings = 'c++;f:function'
-map <F9> :TlistToggle<cr>
+"let tlist_cpp_settings = 'c++;f:function'
+"map <F9> :TlistToggle<cr>
 
 " NERDTree
-let NERDTreeWinPos = "right"
-map <unique> <F12> :NERDTreeToggle<CR>
+"let NERDTreeWinPos = "right"
+"map <unique> <F12> :NERDTreeToggle<CR>
 
 " Tasklist
-let g:tlTokenList = ['TODO', '--%']
+"let g:tlTokenList = ['TODO', '--%']
 
 " Open file at same line as last time
 autocmd BufReadPost *
@@ -116,20 +118,20 @@ nmap <C-kPlus> ]c
 nmap <C-kMinus> [c
 
 " Navigation in tags
-set tags=\tags
-map <unique> <F3> <C-]> " Jump to tag under cursor
-map <unique> <S-F3> <C-T> " Jump back one step
-map <unique> <C-F3> :tnext<CR> " Jump to next tag
+"set tags=\tags
+"map <unique> <F3> <C-]> " Jump to tag under cursor
+"map <unique> <S-F3> <C-T> " Jump back one step
+"map <unique> <C-F3> :tnext<CR> " Jump to next tag
 
 " GUI settings
-if has("gui")
-
-  " T = toolbar
-  " m = menu
-  " r,b = scroll right and bottom
-  set go=Tmrbi
-  set guifont=Monospace\ 9
-  set lines=40 columns=130
-
-endif
+"if has("gui")
+"
+"  " T = toolbar
+"  " m = menu
+"  " r,b = scroll right and bottom
+"  set go=Tmrbi
+"  set guifont=Monospace\ 9
+"  set lines=40 columns=130
+"
+"endif
 
