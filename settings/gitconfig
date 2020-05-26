@@ -23,3 +23,7 @@
 [pager]
 # Set 'git branch' pager to fault, when PAGER=most is set in bashrc, in order to cat 'git branch'
 branch = false
+
+[core]
+# This will convert CRLF to LF on commit
+autocrlf = input
