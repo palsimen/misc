@@ -19,6 +19,8 @@
    lgv = log --name-only
    out = log --name-only @{u}..
    in = !git fetch && git log --name-only ..@{u}
+   update-branch = !currentBranch=$(git branch --show-current) && echo "Updating current branch:$currentBranch with master..." && git checkout master && git pull && git checkout - && git rebase master
+   push-branch = !currentBranch=$(git branch --show-current) && echo "Pushing current branch:$currentBranch to remote..." &&  git push -u origin $currentBranch 
    
 [pager]
 # Set 'git branch' pager to fault, when PAGER=most is set in bashrc, in order to cat 'git branch'

@@ -4,6 +4,5 @@
 # Button 2 (langfinger)  => right click
 # Button 9 (wheel press) => middle click
 #
-# ln -s /home/palsimen/misc/settings/evoluent-vertical-mouse-4.conf /usr/share/X11/xorg.conf.d/90-evoluent.conf
 
 xinput set-button-map "Kingsis Peripherals Evoluent VerticalMouse 4" 1 3 3 4 5 6 7 8 2 10
