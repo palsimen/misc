@@ -8,8 +8,13 @@ export PATH=$PATH:~/misc/bin:~/bin
 #   export PAGER="most"
 #fi
 
+function currentGitBranch {
+   # Pipe std err to dev/null and add leading and trailing brackets  
+   git branch --show-current 2> /dev/null | sed 's/^/ \[/' | sed 's/$/\]/'
+}
+
 # Copy of ubuntu command prompt
-export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\$ "
+export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\033[00;32m\]\$(currentGitBranch)\[\033[00m\]$ "
 
 # Ignore case when tabbing in terminal
 bind 'set completion-ignore-case on'
