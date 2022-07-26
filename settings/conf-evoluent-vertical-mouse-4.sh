@@ -5,4 +5,5 @@
 # Button 9 (wheel press) => middle click
 #
 
-xinput set-button-map "Kingsis Peripherals Evoluent VerticalMouse 4" 1 3 3 4 5 6 7 8 2 10
+#xinput set-button-map "Kingsis Peripherals Evoluent VerticalMouse 4" 1 3 3 4 5 6 7 8 2 10
+xinput set-button-map "Virtual core pointer" 1 3 3 4 5 6 7 8 2 10

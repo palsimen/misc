@@ -1,0 +1,11 @@
+# Remap buttons for Evoluent vertical mouse
+#
+# Place file in: /etc/udev/hwdb.d/70-mouse-remap.hwdb
+# Load with: sudo systemd-hwdb update
+# Pull mouse in an out
+
+evdev:name:Kingsis Peripherals Evoluent VerticalMouse 4:*
+ ID_INPUT_KEY=1
+ KEYBOARD_KEY_90003=btn_right
+ KEYBOARD_KEY_90005=btn_middle
+
