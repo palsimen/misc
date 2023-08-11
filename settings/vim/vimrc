@@ -48,6 +48,8 @@ set statusline=%-20f%10y%=%p%%\ %m\ %r\ \(%l\,%c\)
 
 colorscheme desert
 
+set guifont=Menlo-Regular:h14
+
 set term=xterm-256color
 
 " Put search result in center of window
@@ -130,7 +132,7 @@ nmap <C-kMinus> [c
 "  " m = menu
 "  " r,b = scroll right and bottom
 "  set go=Tmrbi
-"  set guifont=Monospace\ 9
+"  set guifont=Monospace\ 14
 "  set lines=40 columns=130
 "
 "endif

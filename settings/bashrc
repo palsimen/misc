@@ -1,4 +1,4 @@
-LOCAL_SETTINGS_DIR="/home/$USER/mysettings"
+LOCAL_SETTINGS_DIR="/Users/$USER/mysettings"
 LOCAL_BASHRC="$LOCAL_SETTINGS_DIR/bashrc"
 
 export PATH=$PATH:~/misc/bin:~/bin
