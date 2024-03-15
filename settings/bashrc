@@ -20,12 +20,7 @@ export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\033[0
 bind 'set completion-ignore-case on'
 
 # Set the preferred editor
-# NB! Non GUI systems does not have gvim (e.g. raspberry pi), then set it to vim
-if [ "$(command -v gvim)" ]; then
-   export EDITOR="gvim --nofork"
-else
-   export EDITOR="vim"
-fi
+export EDITOR="vim"
 
 # Aliases
 alias ll='ls -alF'
